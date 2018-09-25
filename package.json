@@ -4,6 +4,7 @@
   "description": "Chain through your React Native forms with ease",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "prettier": "prettier --write './src/**/*'"
   },

@@ -1,16 +1,15 @@
 import * as React from 'react';
 import { TextInput, TextInputProps } from 'react-native';
 
-const textInputRefs: { [key: string]: React.RefObject<TextInput> } = {};
+const textInputRefs: { [key: string]: TextInput } = {};
 const defaultValue = {
-  addRef: (name: string, ref: React.RefObject<TextInput>) => {
-    if (!!ref) {
+  addRef: (name: string, ref: TextInput | null) => {
+    if (ref) {
       textInputRefs[name] = ref;
     }
   },
   chain: (name: string) => textInputRefs[name].focus(),
 };
-
 const context = React.createContext(defaultValue);
 const { Consumer } = context;
 
