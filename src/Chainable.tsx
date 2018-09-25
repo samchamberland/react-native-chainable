@@ -8,20 +8,20 @@ const defaultValue = {
       textInputRefs[name] = ref;
     }
   },
-  next: (name: string) => textInputRefs[name].focus(),
+  chain: (name: string) => textInputRefs[name].focus(),
 };
 
 const context = React.createContext(defaultValue);
 const { Consumer } = context;
 
-export type NextFn = (name: string) => void;
+export type chainFn = (name: string) => void;
 
 export interface FormProps {
-  children: (fn: NextFn) => React.ReactNode;
+  children: (fn: chainFn) => React.ReactNode;
 }
 
 export const Form = ({ children }: FormProps) => (
-  <Consumer>{({ next }) => children(next)}</Consumer>
+  <Consumer>{({ chain }) => children(chain)}</Consumer>
 );
 
 export interface InputProps {

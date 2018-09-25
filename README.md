@@ -14,26 +14,26 @@ export default class SignUp {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Chainable.Form>
-          {next => (
+          {chain => (
             <React.Fragment>
               <Chainable.TextInput
                 name="email"
-                style={styles.textInput}
+                style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 value={this.state.email}
                 onChangeText={text => this.setState({ email: text })}
-                onSubmitEditing={() => next('password')}
+                onSubmitEditing={() => chain('password')}
               />
               <Chainable.TextInput
                 name="password"
-                style={styles.textInput}
+                style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 secureTextEntry
                 value={this.state.password}
                 onChangeText={text => this.setState({ password: text })}
-                onSubmitEditing={() => next('confirm')}
+                onSubmitEditing={() => chain('confirm')}
               />
               <Chainable.TextInput
                 name="confirm"
-                style={styles.textInput}
+                style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 secureTextEntry
                 value={this.state.confirm}
                 onChange={text => this.setState({ confirm: text })}
