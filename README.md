@@ -2,6 +2,10 @@
 
 🔗 Chain through your React Native forms with ease
 
+## Installation
+
+_Work in progress_
+
 ## Usage
 
 ```jsx
