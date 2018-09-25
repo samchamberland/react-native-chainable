@@ -16,14 +16,14 @@ export default class SignUp {
         <Chainable.Form>
           {chain => (
             <React.Fragment>
-              <Chainable.TextInput
+              <Chainable.Input
                 name="email"
                 style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 value={this.state.email}
                 onChangeText={text => this.setState({ email: text })}
                 onSubmitEditing={() => chain('password')}
               />
-              <Chainable.TextInput
+              <Chainable.Input
                 name="password"
                 style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 secureTextEntry
@@ -31,7 +31,7 @@ export default class SignUp {
                 onChangeText={text => this.setState({ password: text })}
                 onSubmitEditing={() => chain('confirm')}
               />
-              <Chainable.TextInput
+              <Chainable.Input
                 name="confirm"
                 style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 secureTextEntry
