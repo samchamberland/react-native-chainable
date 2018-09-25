@@ -61,9 +61,9 @@ that allows you to chain to (i.e. set focus on) the next input by its unique nam
 | ---------------------- | ------------------------------------------- |
 | (name: string) => void | Function to chain to the next input by name |
 
-### Props
-
 `Chainable.Input`
+
+### Props
 
 | Name   | Type                                    | Description                                                 |
 | ------ | --------------------------------------- | ----------------------------------------------------------- |
