@@ -7,7 +7,7 @@
 ```jsx
 import * as Chainable from 'react-native-chainable';
 
-export default class SignUp {
+export default class SignUp extends React.Component {
   // ...
 
   render() {
@@ -47,3 +47,25 @@ export default class SignUp {
   }
 }
 ```
+
+## API
+
+`Chainable.Form`
+
+### Render prop
+
+The render prop function you pass as a function as a child will be called with a function
+that allows you to chain to (i.e. set focus on) the next input by its unique name
+
+| Type                   | Description                                 |
+| ---------------------- | ------------------------------------------- |
+| (name: string) => void | Function to chain to the next input by name |
+
+### Props
+
+`Chainable.Input`
+
+| Name   | Type                                    | Description                                                 |
+| ------ | --------------------------------------- | ----------------------------------------------------------- |
+| name   | string (**required**)                   | An unique name for your input                               |
+| isLast | boolean (optional, defaults to `false`) | When `true`, the input should be considered as the last one |
