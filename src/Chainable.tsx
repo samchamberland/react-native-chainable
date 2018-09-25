@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { TextInput, TextInputProps } from 'react-native';
 
-const textInputRefs: { [key: string]: React.RefObject<any> } = {};
+const textInputRefs: { [key: string]: React.RefObject<TextInput> } = {};
 const defaultValue = {
-  addRef: (name: string, ref: React.RefObject<any>) => {
+  addRef: (name: string, ref: React.RefObject<TextInput>) => {
     if (!!ref) {
       textInputRefs[name] = ref;
     }
@@ -16,24 +16,24 @@ const { Consumer } = context;
 
 export type NextFn = (name: string) => void;
 
-export interface SheetProps {
+export interface FormProps {
   children: (fn: NextFn) => React.ReactNode;
 }
 
-export const Sheet = ({ children }: SheetProps) => (
+export const Form = ({ children }: FormProps) => (
   <Consumer>{({ next }) => children(next)}</Consumer>
 );
 
-export interface LineProps {
+export interface InputProps {
   name: string;
   isLast?: boolean;
 }
 
-export const Line = ({
+export const Input = ({
   name,
   isLast = false,
   ...props
-}: LineProps & TextInputProps) => (
+}: InputProps & TextInputProps) => (
   <Consumer>
     {({ addRef }) => (
       <TextInput
