@@ -13,10 +13,10 @@ const defaultValue = {
 const context = React.createContext(defaultValue);
 const { Consumer } = context;
 
-export type chainFn = (name: string) => void;
+export type ChainFn = (name: string) => void;
 
 export interface FormProps {
-  children: (fn: chainFn) => React.ReactNode;
+  children: (fn: ChainFn) => React.ReactNode;
 }
 
 export const Form = ({ children }: FormProps) => (
