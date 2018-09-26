@@ -1,6 +1,6 @@
 {
   "name": "react-native-chainable",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Chain through your React Native forms with ease",
   "main": "dist/react-native-chainable.js",
   "files": [
@@ -40,7 +40,7 @@
     "typescript": "^3.0.3"
   },
   "peerDependencies": {
-    "react": "^16.5.2",
-    "react-native": "^0.57.1"
+    "react": "^16.3.0",
+    "react-native": "^0.54.0"
   }
 }

@@ -4,7 +4,13 @@
 
 ## Installation
 
-_Work in progress_
+```sh
+npm install react-native-chainable --save
+
+# or
+
+yarn add react-native-chainable
+```
 
 ## Usage
 
