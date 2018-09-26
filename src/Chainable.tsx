@@ -38,6 +38,7 @@ export const Input = ({
       <TextInput
         ref={ref => addRef(name, ref)}
         returnKeyType={!isLast ? 'next' : 'done'}
+        blurOnSubmit={isLast}
         {...props}
       />
     )}
