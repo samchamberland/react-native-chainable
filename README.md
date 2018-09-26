@@ -40,7 +40,7 @@ export default class SignUp extends React.Component {
                 style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 secureTextEntry
                 value={this.state.confirm}
-                onChange={text => this.setState({ confirm: text })}
+                onChangeText={text => this.setState({ confirm: text })}
                 isLast
               />
             </React.Fragment>

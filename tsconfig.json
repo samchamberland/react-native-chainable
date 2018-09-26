@@ -8,6 +8,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "compiled",
+    "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "target": "es5"
