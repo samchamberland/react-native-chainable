@@ -4,6 +4,8 @@
 
 ## Installation
 
+### UNDER DEVELOPMENT / WIP - API is subject to change
+
 ```sh
 npm install react-native-chainable --save
 
