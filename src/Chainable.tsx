@@ -36,6 +36,7 @@ export const Input = ({
   <Consumer>
     {({ addRef }) => (
       <TextInput
+        secureTextEntry
         ref={ref => addRef(name, ref)}
         returnKeyType={!isLast ? 'next' : 'done'}
         blurOnSubmit={isLast}
