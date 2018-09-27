@@ -4,15 +4,7 @@
 
 ## Installation
 
-### UNDER DEVELOPMENT / WIP - API is subject to change
-
-```sh
-npm install react-native-chainable --save
-
-# or
-
-yarn add react-native-chainable
-```
+_Work in progress_
 
 ## Usage
 
