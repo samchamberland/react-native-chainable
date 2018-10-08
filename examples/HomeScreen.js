@@ -20,7 +20,6 @@ export default class HomeScreen extends React.Component {
           {(chain, by) => (
             <React.Fragment>
               <Chainable.Input
-                by={() => by('email')}
                 style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 value={this.state.email}
                 onChangeText={text => this.setState({ email: text })}
