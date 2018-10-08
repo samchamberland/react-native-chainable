@@ -54,22 +54,22 @@ export default class HomeScreen extends React.Component {
 
 ## API
 
-`Chainable.Form`
+`<Chainable.Form />`
 
 ### Render prop (function as a child)
 
-The function you pass as a child will be called with a function that allows you to chain to (i.e. set focus on) the next input by name and a function to register an input as chainable by a given name
+The function you pass as a child will be called with a function that allows you to chain to (i.e. set focus on) the next input by name and a function to mark an input as chainable by a given name
 
-| Type               | Description                                                  |
-| ------------------ | ------------------------------------------------------------ |
-| Function (`chain`) | Function to chain to the next input by name                  |
-| Function (`by`)    | Function to register your input as chainable by a given name |
+| Type               | Description                                              |
+| ------------------ | -------------------------------------------------------- |
+| Function (`chain`) | Function to chain to the next input by name              |
+| Function (`by`)    | Function to mark your input as chainable by a given name |
 
-`Chainable.Input`
+`<Chainable.Input />`
 
 ### Props
 
-| Name   | Type                                    | Description                                                 |
-| ------ | --------------------------------------- | ----------------------------------------------------------- |
-| name   | string (**required**)                   | An unique name for your input                               |
-| isLast | boolean (optional, defaults to `false`) | When `true`, the input should be considered as the last one |
+| Name   | Type                                    | Description                                                                                                     |
+| ------ | --------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
+| by     | Function (**required**)                 | The function given by `<Chainable.Form />`. It must be called with a name for the input to mark it as chainable |
+| isLast | boolean (optional, defaults to `false`) | When `true`, the input should be considered as the last one                                                     |
