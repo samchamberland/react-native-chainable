@@ -11,24 +11,24 @@ _Work in progress_
 ```jsx
 import * as Chainable from 'react-native-chainable';
 
-export default class SignUp extends React.Component {
+export default class HomeScreen extends React.Component {
   // ...
 
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Chainable.Form>
-          {chain => (
+          {(chain, by) => (
             <React.Fragment>
               <Chainable.Input
-                name="email"
+                by={() => by('email')}
                 style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 value={this.state.email}
                 onChangeText={text => this.setState({ email: text })}
                 onSubmitEditing={() => chain('password')}
               />
               <Chainable.Input
-                name="password"
+                by={() => by('password')}
                 style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 secureTextEntry
                 value={this.state.password}
@@ -36,7 +36,7 @@ export default class SignUp extends React.Component {
                 onSubmitEditing={() => chain('confirm')}
               />
               <Chainable.Input
-                name="confirm"
+                by={() => by('confirm')}
                 style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 secureTextEntry
                 value={this.state.confirm}
@@ -56,14 +56,14 @@ export default class SignUp extends React.Component {
 
 `Chainable.Form`
 
-### Render prop
+### Render prop (function as a child)
 
-The render prop function you pass as a function as a child will be called with a function
-that allows you to chain to (i.e. set focus on) the next input by its unique name
+The function you pass as a child will be called with a function that allows you to chain to (i.e. set focus on) the next input by name and a function to register an input as chainable by a given name
 
-| Type                   | Description                                 |
-| ---------------------- | ------------------------------------------- |
-| (name: string) => void | Function to chain to the next input by name |
+| Type               | Description                                                  |
+| ------------------ | ------------------------------------------------------------ |
+| Function (`chain`) | Function to chain to the next input by name                  |
+| Function (`by`)    | Function to register your input as chainable by a given name |
 
 `Chainable.Input`
 
