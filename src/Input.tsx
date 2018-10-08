@@ -1,26 +1,26 @@
 import * as React from 'react';
 import { TextInput, TextInputProps } from 'react-native';
 
-import Context from './Context';
-
-export interface InputProps {
-  name: string;
+export interface InputProps extends TextInputProps {
   isLast?: boolean;
+  by: () => (ref: React.RefObject<TextInput>) => void;
 }
 
-export const Input = ({
-  name,
-  isLast = false,
-  ...props
-}: InputProps & TextInputProps) => (
-  <Context.Consumer>
-    {({ addRef }) => (
+export class Input extends React.Component<InputProps> {
+  _ref: React.RefObject<TextInput> = React.createRef();
+
+  componentDidMount() {
+    this.props.by()(this._ref);
+  }
+
+  render() {
+    return (
       <TextInput
-        ref={ref => addRef(name, ref)}
-        returnKeyType={!isLast ? 'next' : 'done'}
-        blurOnSubmit={isLast}
-        {...props}
+        ref={this._ref}
+        returnKeyType={!this.props.isLast ? 'next' : 'done'}
+        blurOnSubmit={this.props.isLast}
+        {...this.props}
       />
-    )}
-  </Context.Consumer>
-);
+    );
+  }
+}
