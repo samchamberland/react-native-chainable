@@ -1,14 +1,33 @@
 import * as React from 'react';
-import { TextInput } from 'react-native';
+import { TextInput, TextInputProps } from 'react-native';
+
+import { Input } from './Input';
 
 export type ChainFn = (name: string) => void;
-export type AddFn = (name: string, ref: React.RefObject<TextInput>) => void;
 
 export interface FormProps {
-  children: (chainFn: ChainFn, addFn: AddFn) => React.ReactNode;
+  children: (chainFn: ChainFn) => React.ReactNode;
 }
 
+export type MarkAsChainableFn = (
+  name: string,
+  ref: React.RefObject<TextInput>,
+) => void;
+
+export interface InputProps extends TextInputProps {
+  name: string;
+  isLast?: boolean;
+}
+
+const FormContext = React.createContext<any>({});
+
 export class Form extends React.Component<FormProps> {
+  static Input = (props: InputProps) => (
+    <FormContext.Consumer>
+      {value => <Input markAsChainable={value.markAsChainable} {...props} />}
+    </FormContext.Consumer>
+  );
+
   _refs: { [key: string]: React.RefObject<TextInput> } = {};
 
   _chain = (name: string) => {
@@ -19,11 +38,15 @@ export class Form extends React.Component<FormProps> {
     }
   };
 
-  _by = (name: string) => (ref: React.RefObject<TextInput>) => {
+  _markAsChainable: MarkAsChainableFn = (name, ref) => {
     this._refs[name] = ref;
   };
 
   render() {
-    return this.props.children(this._chain, this._by);
+    return (
+      <FormContext.Provider value={{ markAsChainable: this._markAsChainable }}>
+        {this.props.children(this._chain)}
+      </FormContext.Provider>
+    );
   }
 }

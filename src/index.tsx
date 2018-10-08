@@ -1,2 +1,2 @@
-export { Form, FormProps, ChainFn, AddFn } from './Form';
+export { Form, FormProps, ChainFn } from './Form';
 export { Input, InputProps } from './Input';

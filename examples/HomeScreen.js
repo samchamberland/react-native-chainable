@@ -17,16 +17,16 @@ export default class HomeScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Chainable.Form>
-          {(chain, by) => (
+          {chain => (
             <React.Fragment>
-              <Chainable.Input
+              <Chainable.Form.Input
                 style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 value={this.state.email}
                 onChangeText={text => this.setState({ email: text })}
                 onSubmitEditing={() => chain('password')}
               />
-              <Chainable.Input
-                by={() => by('password')}
+              <Chainable.Form.Input
+                name="password"
                 style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 secureTextEntry
                 value={this.state.password}
