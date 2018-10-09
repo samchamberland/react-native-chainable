@@ -5,7 +5,7 @@ import { Input } from './Input';
 
 export type ChainFn = (name: string) => void;
 
-export interface FormProps {
+export interface ChainableProps {
   children: (chainFn: ChainFn) => React.ReactNode;
 }
 
@@ -19,13 +19,13 @@ export interface InputProps extends TextInputProps {
   isLast?: boolean;
 }
 
-const FormContext = React.createContext<any>({});
+const ChainableContext = React.createContext<any>({});
 
-export class Form extends React.Component<FormProps> {
+export class Chainable extends React.Component<ChainableProps> {
   static Input = (props: InputProps) => (
-    <FormContext.Consumer>
+    <ChainableContext.Consumer>
       {value => <Input markAsChainable={value.markAsChainable} {...props} />}
-    </FormContext.Consumer>
+    </ChainableContext.Consumer>
   );
 
   _refs: { [key: string]: React.RefObject<TextInput> } = {};
@@ -44,9 +44,11 @@ export class Form extends React.Component<FormProps> {
 
   render() {
     return (
-      <FormContext.Provider value={{ markAsChainable: this._markAsChainable }}>
+      <ChainableContext.Provider
+        value={{ markAsChainable: this._markAsChainable }}
+      >
         {this.props.children(this._chain)}
-      </FormContext.Provider>
+      </ChainableContext.Provider>
     );
   }
 }

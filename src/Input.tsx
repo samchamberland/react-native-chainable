@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { TextInput, TextInputProps } from 'react-native';
 
-export type MarkAsChainableFn = (
+type MarkAsChainableFn = (
   name: string,
   ref: React.RefObject<TextInput>,
 ) => void;
 
-export interface InputProps extends TextInputProps {
+interface InputProps extends TextInputProps {
   name: string;
   isLast?: boolean;
   markAsChainable: MarkAsChainableFn;
