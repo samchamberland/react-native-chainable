@@ -15,24 +15,24 @@ yarn add react-native-chainable
 ## Usage
 
 ```jsx
-import * as Chainable from 'react-native-chainable';
+import { Chainable } from 'react-native-chainable';
 
-export default class HomeScreen extends React.Component {
+export default class SignUpScreen extends React.Component {
   // ...
 
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Chainable.Form>
+        <Chainable>
           {chain => (
             <React.Fragment>
-              <Chainable.Form.Input
+              <Chainable.Input
                 style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 value={this.state.email}
                 onChangeText={text => this.setState({ email: text })}
                 onSubmitEditing={() => chain('password')}
               />
-              <Chainable.Form.Input
+              <Chainable.Input
                 name="password"
                 style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 secureTextEntry
@@ -40,7 +40,7 @@ export default class HomeScreen extends React.Component {
                 onChangeText={text => this.setState({ password: text })}
                 onSubmitEditing={() => chain('confirm')}
               />
-              <Chainable.Form.Input
+              <Chainable.Input
                 name="confirm"
                 style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
                 secureTextEntry
@@ -50,7 +50,7 @@ export default class HomeScreen extends React.Component {
               />
             </React.Fragment>
           )}
-        </Chainable.Form>
+        </Chainable>
       </View>
     );
   }

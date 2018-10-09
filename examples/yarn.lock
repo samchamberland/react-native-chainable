@@ -4237,7 +4237,7 @@ react-native-branch@2.2.5:
   integrity sha1-QHTdY7SXPmOX2c5Q6XtXx3pRjp0=
 
 "react-native-chainable@file:..":
-  version "0.0.5"
+  version "0.1.0"
 
 react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
