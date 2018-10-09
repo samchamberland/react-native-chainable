@@ -8,9 +8,8 @@
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "compiled",
+    "outDir": "dist",
     "skipLibCheck": true,
-    "sourceMap": true,
     "strict": true,
     "target": "es5"
   }

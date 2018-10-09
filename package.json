@@ -1,13 +1,13 @@
 {
   "name": "react-native-chainable",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Chain through your React Native forms with ease",
   "main": "dist/react-native-chainable.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsc && rollup --config",
+    "build": "tsc",
     "lint": "tslint --config tslint.json --project tsconfig.json",
     "prettier": "prettier --write './src/**/*'"
   },
@@ -32,9 +32,6 @@
     "@types/react": "^16.4.14",
     "@types/react-native": "^0.56.24",
     "prettier": "^1.14.3",
-    "rollup": "^0.66.2",
-    "rollup-plugin-commonjs": "^9.1.8",
-    "rollup-plugin-node-resolve": "^3.4.0",
     "tslint": "^5.11.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.0.3"
