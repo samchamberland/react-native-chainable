@@ -59,7 +59,7 @@ export default class SignUpScreen extends React.Component {
 
 ## API
 
-`<Chainable.Form />`
+`<Chainable />`
 
 ### Render prop (function as a child)
 
@@ -69,7 +69,7 @@ The function you pass as a child will be called with a function that allows you 
 | ---------------------- | ------------------------------------------- |
 | (name: string) => void | Function to chain to the next input by name |
 
-`<Chainable.Form.Input />`
+`<Chainable.Input />`
 
 ### Props
 
