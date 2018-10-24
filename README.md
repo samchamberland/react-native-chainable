@@ -22,7 +22,7 @@ export default class SignUpScreen extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View>
         <Chainable>
           {chain => (
             <>
