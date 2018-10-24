@@ -22,33 +22,31 @@ export default class SignUpScreen extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View>
         <Chainable>
           {chain => (
-            <React.Fragment>
+            <>
               <Chainable.Input
-                style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
+                name="email"
                 value={this.state.email}
                 onChangeText={text => this.setState({ email: text })}
                 onSubmitEditing={() => chain('password')}
               />
               <Chainable.Input
                 name="password"
-                style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
-                secureTextEntry
                 value={this.state.password}
                 onChangeText={text => this.setState({ password: text })}
                 onSubmitEditing={() => chain('confirm')}
+                secureTextEntry
               />
               <Chainable.Input
                 name="confirm"
-                style={{ width: 150, borderWidth: 1, borderColor: 'dimgrey' }}
-                secureTextEntry
                 value={this.state.confirm}
                 onChangeText={text => this.setState({ confirm: text })}
+                secureTextEntry
                 isLast
               />
-            </React.Fragment>
+            </>
           )}
         </Chainable>
       </View>
