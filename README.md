@@ -35,8 +35,8 @@ class SignUpScreen extends React.Component {
                 value={this.state.password}
                 onChangeText={text => this.setState({ password: text })}
                 secureTextEntry
-                name="password"
                 onSubmitEditing={() => chain('confirm')}
+                name="password"
               />
               <Chainable.Input
                 value={this.state.confirm}
