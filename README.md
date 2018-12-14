@@ -1,6 +1,6 @@
 # react-native-chainable
 
-🔗 Chain through your React Native forms with ease
+Chain through your React Native forms with ease
 
 ## Installation
 
