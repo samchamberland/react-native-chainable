@@ -46,7 +46,6 @@ export class Input extends React.Component<InputProps> {
       <TextInput
         ref={this._ref}
         returnKeyType={returnKeyType}
-        blurOnSubmit={this.props.isLast}
         {...this.props}
       />
     );
