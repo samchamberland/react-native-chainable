@@ -58,7 +58,7 @@ class SignUpScreen extends React.Component {
 
 `<Chainable />`
 
-### Render prop (function as a child)
+### Render prop (function as children)
 
 The function you pass as a child will be called with a function that allows you to chain to (i.e. set focus on) the next input by name
 
