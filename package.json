@@ -33,6 +33,7 @@
     "@types/react-native": "^0.56.24",
     "prettier": "^1.14.3",
     "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.17.0",
     "tslint-react": "^3.6.0",
     "typescript": "^3.0.3"
   },

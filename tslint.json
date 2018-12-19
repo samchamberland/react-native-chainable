@@ -1,32 +1,11 @@
 {
   "defaultSeverity": "error",
-  "extends": ["tslint:recommended", "tslint-react"],
-  "jsRules": {},
+  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
   "rules": {
-    "arrow-parens": false,
     "interface-name": false,
-    "jsx-boolean-value": false,
-    "jsx-curly-spacing": false,
-    "jsx-no-lambda": false,
-    "jsx-no-multiline-js": false,
-    "max-classes-per-file": false,
-    "max-line-length": false,
     "member-access": false,
-    "object-literal-key-quotes": false,
     "object-literal-sort-keys": false,
     "ordered-imports": false,
-    "quotemark": false,
-    "semicolon": [true, "always", "ignore-bound-class-methods"],
-    "trailing-comma": [
-      true,
-      { "multiline": "always", "esSpecCompliant": true }
-    ],
-    "variable-name": [
-      true,
-      "check-format",
-      "allow-leading-underscore",
-      "allow-pascal-case"
-    ]
-  },
-  "rulesDirectory": []
+    "variable-name": false
+  }
 }
