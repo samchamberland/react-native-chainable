@@ -5,11 +5,7 @@ Chain through your React Native forms with ease
 ## Installation
 
 ```sh
-npm install react-native-chainable --save
-
-# or
-
-yarn add react-native-chainable
+npm i react-native-chainable
 ```
 
 ## Usage

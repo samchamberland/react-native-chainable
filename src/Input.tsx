@@ -6,7 +6,7 @@ type MarkAsChainableFn = (
   ref: React.RefObject<TextInput>,
 ) => void;
 
-interface InputProps extends TextInputProps {
+interface Props {
   name: string;
   isLast?: boolean;
   markAsChainable: MarkAsChainableFn;
@@ -14,16 +14,16 @@ interface InputProps extends TextInputProps {
 
 const numericKeyboards = ['numeric', 'phone-pad', 'number-pad', 'decimal-pad'];
 
-export class Input extends React.Component<InputProps> {
+class Input extends React.Component<Props & TextInputProps> {
   static defaultProps = {
     isLast: false,
   };
 
-  _ref: React.RefObject<TextInput> = React.createRef();
+  _textInput = React.createRef<TextInput>();
 
   componentDidMount() {
     if (this.props.name) {
-      this.props.markAsChainable(this.props.name, this._ref);
+      this.props.markAsChainable(this.props.name, this._textInput);
     }
   }
 
@@ -44,10 +44,12 @@ export class Input extends React.Component<InputProps> {
 
     return (
       <TextInput
-        ref={this._ref}
+        ref={this._textInput}
         returnKeyType={returnKeyType}
         {...this.props}
       />
     );
   }
 }
+
+export { Input };

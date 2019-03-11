@@ -1,6 +1,6 @@
 {
   "name": "react-native-chainable",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "Chain through your React Native forms with ease",
   "main": "dist/index.js",
   "files": [
@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "lint": "tslint --config tslint.json --project tsconfig.json",
-    "prettier": "prettier --write './src/**/*'"
+    "lint": "eslint 'src/**/*'",
+    "prettier": "prettier --write 'src/**/*'"
   },
   "repository": {
     "type": "git",
@@ -31,10 +31,12 @@
   "devDependencies": {
     "@types/react": "^16.4.14",
     "@types/react-native": "^0.56.24",
+    "@typescript-eslint/eslint-plugin": "^1.4.2",
+    "@typescript-eslint/parser": "^1.4.2",
+    "eslint": "^5.15.1",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-react": "^7.12.4",
     "prettier": "^1.14.3",
-    "tslint": "^5.11.0",
-    "tslint-config-prettier": "^1.17.0",
-    "tslint-react": "^3.6.0",
     "typescript": "^3.0.3"
   },
   "peerDependencies": {
