@@ -1,6 +1,6 @@
 {
   "name": "react-native-chainable",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Chain through your React Native forms with ease",
   "main": "dist/index.js",
   "files": [
@@ -8,8 +8,8 @@
   ],
   "scripts": {
     "build": "tsc",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --ignore-path .gitignore",
-    "prettier": "prettier --write '**/*' --ignore-path .gitignore"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "prettier": "prettier --write '**/*'"
   },
   "repository": {
     "type": "git",
