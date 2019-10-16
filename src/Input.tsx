@@ -6,13 +6,13 @@ type MarkAsChainableFn = (
   ref: React.RefObject<TextInput>,
 ) => void;
 
+const numericKeyboards = ['numeric', 'phone-pad', 'number-pad', 'decimal-pad'];
+
 interface Props {
   name: string;
   isLast?: boolean;
   markAsChainable: MarkAsChainableFn;
 }
-
-const numericKeyboards = ['numeric', 'phone-pad', 'number-pad', 'decimal-pad'];
 
 class Input extends React.Component<Props & TextInputProps> {
   static defaultProps = {
