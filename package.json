@@ -1,8 +1,9 @@
 {
   "name": "react-native-chainable",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Chain through your React Native forms with ease",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
