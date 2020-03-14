@@ -17,13 +17,6 @@
     "type": "git",
     "url": "git+https://github.com/samchamberland/react-native-chainable.git"
   },
-  "keywords": [
-    "react",
-    "react-native",
-    "chain",
-    "chainable",
-    "form"
-  ],
   "author": "Samuel Chamberland",
   "license": "MIT",
   "bugs": {
@@ -31,16 +24,16 @@
   },
   "homepage": "https://github.com/samchamberland/react-native-chainable#readme",
   "devDependencies": {
-    "@types/react": "^16.9.7",
-    "@types/react-native": "^0.60.21",
-    "@typescript-eslint/eslint-plugin": "^2.4.0",
-    "@typescript-eslint/parser": "^2.4.0",
-    "eslint": "^6.5.1",
-    "prettier": "^1.18.2",
-    "typescript": "^3.6.4"
+    "@types/react": "^16.9.23",
+    "@types/react-native": "^0.61.22",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "eslint": "^6.8.0",
+    "prettier": "^1.19.1",
+    "typescript": "^3.8.3"
   },
   "peerDependencies": {
-    "react": "^16.3.0",
-    "react-native": "^0.54.0"
+    "react": "*",
+    "react-native": "*"
   }
 }
