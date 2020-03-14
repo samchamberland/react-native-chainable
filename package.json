@@ -1,7 +1,6 @@
 {
   "name": "react-native-chainable",
-  "version": "1.0.15",
-  "description": "Chain through your React Native forms with ease",
+  "version": "1.0.16",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -17,12 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/samchamberland/react-native-chainable.git"
   },
-  "author": "Samuel Chamberland",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/samchamberland/react-native-chainable/issues"
-  },
-  "homepage": "https://github.com/samchamberland/react-native-chainable#readme",
   "devDependencies": {
     "@types/react": "^16.9.23",
     "@types/react-native": "^0.61.22",
