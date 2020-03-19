@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { TextInput, TextInputProps } from 'react-native';
-
 import { Input } from './Input';
 
 type ChainFn = (name: string) => void;
