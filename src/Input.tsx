@@ -1,10 +1,7 @@
-import * as React from 'react';
+import React, { RefObject, Component, createRef } from 'react';
 import { Platform, TextInput, TextInputProps } from 'react-native';
 
-type MarkAsChainableFn = (
-  name: string,
-  ref: React.RefObject<TextInput>,
-) => void;
+type MarkAsChainableFn = (name: string, ref: RefObject<TextInput>) => void;
 
 const numericKeyboards = ['numeric', 'phone-pad', 'number-pad', 'decimal-pad'];
 
@@ -14,12 +11,12 @@ interface Props {
   markAsChainable: MarkAsChainableFn;
 }
 
-class Input extends React.Component<Props & TextInputProps> {
+class Input extends Component<Props & TextInputProps> {
   static defaultProps = {
     isLast: false,
   };
 
-  _textInput = React.createRef<TextInput>();
+  _textInput = createRef<TextInput>();
 
   componentDidMount() {
     if (this.props.name) {

@@ -1,33 +1,47 @@
 {
   "name": "react-native-chainable",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-  "scripts": {
-    "build": "tsc",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "prettier": "prettier --write '**/*'",
-    "tsc": "tsc --noEmit"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/samchamberland/react-native-chainable.git"
   },
   "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "prettier": "prettier --write src",
+    "tsc": "tsc --noEmit"
+  },
   "devDependencies": {
-    "@types/react": "^16.9.23",
-    "@types/react-native": "^0.61.22",
-    "@typescript-eslint/eslint-plugin": "^2.23.0",
-    "@typescript-eslint/parser": "^2.23.0",
+    "@types/react": "^16.9.31",
+    "@types/react-native": "^0.62.1",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
-    "prettier": "^1.19.1",
+    "eslint-config-react-app": "^5.2.1",
+    "eslint-plugin-flowtype": "^4.7.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "^3.0.0",
+    "prettier": "^2.0.2",
     "typescript": "^3.8.3"
   },
   "peerDependencies": {
     "react": "*",
     "react-native": "*"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all"
   }
 }

@@ -1,33 +1,29 @@
-import * as React from 'react';
+import React, { RefObject, createContext, ReactNode, Component } from 'react';
 import { TextInput, TextInputProps } from 'react-native';
 import { Input } from './Input';
 
 type ChainFn = (name: string) => void;
-
-type MarkAsChainableFn = (
-  name: string,
-  ref: React.RefObject<TextInput>,
-) => void;
+type MarkAsChainableFn = (name: string, ref: RefObject<TextInput>) => void;
 
 export interface InputProps {
   name: string;
   isLast?: boolean;
 }
 
-const ChainableContext = React.createContext<any>({});
+const ChainableContext = createContext<any>({});
 
 interface Props {
-  children: (chainFn: ChainFn) => React.ReactNode;
+  children: (chainFn: ChainFn) => ReactNode;
 }
 
-class Chainable extends React.Component<Props> {
+class Chainable extends Component<Props> {
   static Input = (props: InputProps & TextInputProps) => (
     <ChainableContext.Consumer>
-      {value => <Input markAsChainable={value.markAsChainable} {...props} />}
+      {(value) => <Input markAsChainable={value.markAsChainable} {...props} />}
     </ChainableContext.Consumer>
   );
 
-  _textInputs: { [key: string]: React.RefObject<TextInput> } = {};
+  _textInputs: { [key: string]: RefObject<TextInput> } = {};
 
   _chain = (name: string) => {
     const { current } = this._textInputs[name];
