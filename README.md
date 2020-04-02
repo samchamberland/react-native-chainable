@@ -11,31 +11,29 @@ npm i react-native-chainable
 ## Usage
 
 ```jsx
-import { Chainable } from 'react-native-chainable';
-
-class SignUpScreen extends React.Component {
+class SignUpScreen extends Component {
   // ...
 
   render() {
     return (
       <Chainable>
-        {chain => (
+        {(chain) => (
           <>
             <Chainable.Input
               value={this.state.email}
-              onChangeText={text => this.setState({ email: text })}
+              onChangeText={(text) => this.setState({ email: text })}
               onSubmitEditing={() => chain('password')}
             />
             <Chainable.Input
               value={this.state.password}
-              onChangeText={text => this.setState({ password: text })}
+              onChangeText={(text) => this.setState({ password: text })}
               secureTextEntry
               onSubmitEditing={() => chain('confirm')}
               name="password"
             />
             <Chainable.Input
               value={this.state.confirm}
-              onChangeText={text => this.setState({ confirm: text })}
+              onChangeText={(text) => this.setState({ confirm: text })}
               secureTextEntry
               name="confirm"
               isLast
